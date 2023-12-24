@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <title>Functions</title>
+</head>
+<body>
+
+
+    <div class="container" id="container">
+
+    <aside class="condition" id="condition" > 
+
+            <div id="condition1"> 
+                
+                <p> ● დაწერე ფუნქცია expo, რომელიც იქნება რეკურსიული ფუნქცია და მიიღებს არგუმენტად:
+                     ● ა ციფრს ბ ხარისხს და გ callback - ს და დააბრუნებს მიღებული ციფრის ხარისხს მაგალითად: 5 ხარისხად 3 - არის 125 (5 * 5 *5)
+                </p>
+                
+                
+                </div>
+            <div id="condition2">
+                <p>
+                    ● დაწერე ასინქრონული ფუნქცია, რომელიც არგუმენტად იღებს ობიექტს და აკეთებს deep copy-ს
+                    ● ფუნქციამ უნდა გამოიძახოს reject თუ არგუმენტი არ არის ობიექტი. თუ ყველაფერი კარგად არის, გამოიძახოს resolve კოპირებული ობიექტით
+                </p>
+
+            </div>
+            <div id="condition3">
+                <p>
+              </p>
+            </div>
+    
+    </aside>
+
+            <div  class="cont" id="cont"> 
+
+                <div class="buttons">
+                <button id="homework1">Homework 1</button>
+                <button id="homework3">Homework 2 </button>
+                <button id="homework2">Homework 3</button>
+                </div>
+
+                    <div class="back" id="back">
+                        <a  href="index.html"> <h6>Back</h6> </a>                  
+                    </div>
+                
+
+                    
+                </div>
+                <div class="window" id="window1"></div>
+                <div class="window" id="window2"></div>
+
+
+
+
+                <div class="window" id="window3">
+
+                        <!-- hw2 -->
+                        <div  class="headerpost">
+                            <div class="projcardcontainer">
+                            
+                            
+
+                            </div>
+                        </div>
+                        <!-- hw2 -->    
+
+
+
+
+                </div>
+
+
+
+
+
+
+ <aside class="functions" id="functions">
+
+
+ <div id="function1">
+<pre>
+    const numdeg = (num, deg, cb) => {
+        if (deg === 0) return 1; 
+        return cb(num) * numdeg(num, deg - 1, cb);
+      };
+      
+      const b1 = numdeg(5, 3, (num) => num); 
+      
+      console.log(b1); 
+
+
+</pre>
+
+
+                        </div>
+                        
+
+
+                       <div id="function2">
+<pre>
+    const user = {
+        name: 'nika',
+        age: 23,
+        address: {     
+            georgia:{
+                city: 'ketevan dedofali 2'
+             } 
+         }
+      };
+    
+    
+    function deepcopy(object) {
+        return new Promise((resolve, reject) => {
+    
+    
+    
+          if (typeof object !== 'object' || object === null) {
+            reject('Please select the  object.');
+            return;
+          }
+      
+          try {
+            const copy = JSON.parse(JSON.stringify(object));
+            resolve(copy);
+          } catch (error) {
+            reject('copy error' + error.message);
+          }
+        });
+      }
+        
+      deepcopy(user)
+        .then(copy => {
+          console.log('original', user);
+          console.log('copy', copy);
+        })
+        .catch(error => {
+          console.error('error', error);
+        });
+    
+
+
+</pre>
+                       
+    
+
+                   
+
+                       </div> 
+
+
+
+                       <div id="function3">
+
+
+
+
+                       </div> 
+            
+            </aside>
+            
+        </div>
+          
+
+            
+    <script src="app.js"></script>
+</body>
+</html>
